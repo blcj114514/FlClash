@@ -1,5 +1,6 @@
 import 'package:fl_clash/common/common.dart';
 import 'package:fl_clash/enum/enum.dart';
+import 'package:fl_clash/features/ip_insight/ip_insight.dart';
 import 'package:fl_clash/ui/icons/icons.dart';
 import 'package:fl_clash/views/dashboard/widgets/widgets.dart';
 import 'package:flutter/widgets.dart';
@@ -12,6 +13,7 @@ extension DashboardWidgetView on DashboardWidget {
     DashboardWidget.vpnButton => const VpnCard(),
     DashboardWidget.networkTakeover => const NetworkTakeoverCard(),
     DashboardWidget.serviceStatus => const ServiceStatusCard(),
+    DashboardWidget.ipInsight => const IpInsightCard(),
     DashboardWidget.profiles => const ProfilesCard(),
     DashboardWidget.proxyGroups => const ProxyGroupsCard(),
     DashboardWidget.connectionStats => const ConnectionStatsCard(),
@@ -26,6 +28,7 @@ extension DashboardWidgetView on DashboardWidget {
     DashboardWidget.vpnButton => AppGlyphs.vpn,
     DashboardWidget.networkTakeover => AppGlyphs.shuffle,
     DashboardWidget.serviceStatus => AppGlyphs.radar,
+    DashboardWidget.ipInsight => AppGlyphs.verified,
     DashboardWidget.profiles => AppGlyphs.profiles,
     DashboardWidget.proxyGroups => AppGlyphs.nodeGroup,
     DashboardWidget.connectionStats => AppGlyphs.connections,
@@ -42,6 +45,7 @@ extension DashboardWidgetView on DashboardWidget {
       DashboardWidget.vpnButton => 'VPN',
       DashboardWidget.networkTakeover => appLocalizations.networkTakeover,
       DashboardWidget.serviceStatus => appLocalizations.serviceStatus,
+      DashboardWidget.ipInsight => IpInsightStrings.of(context).cardTitle,
       DashboardWidget.profiles => appLocalizations.profile,
       DashboardWidget.proxyGroups => appLocalizations.proxyGroup,
       DashboardWidget.connectionStats => appLocalizations.connectionStats,
@@ -54,6 +58,7 @@ extension DashboardWidgetView on DashboardWidget {
     final appLocalizations = context.appLocalizations;
     return switch (this) {
       DashboardWidget.currentOutbound => appLocalizations.currentOutboundDesc,
+      DashboardWidget.ipInsight => IpInsightStrings.of(context).cardDescription,
       DashboardWidget.connectionStats => appLocalizations.connectionStatsDesc,
       DashboardWidget.memoryInfo => appLocalizations.memoryInfoDesc,
       _ => null,

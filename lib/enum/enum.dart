@@ -458,6 +458,7 @@ enum DashboardWidget {
   vpnButton(platforms: [SupportPlatform.Android]),
   networkTakeover(platforms: desktopPlatforms),
   serviceStatus,
+  ipInsight,
   profiles,
   proxyGroups,
   connectionStats,

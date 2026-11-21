@@ -113,6 +113,9 @@ var serviceCheckers = []serviceChecker{
 	{name: "tiktok", check: checkTikTok},
 	{name: "discord", check: checkDiscord},
 	{name: "bilibili", check: checkBilibili},
+	{name: "perplexity", check: checkPerplexity},
+	{name: "copilot", check: checkCopilot},
+	{name: "grok", check: checkGrok},
 }
 
 func handleServiceCheck(params *ServiceCheckParams) []ServiceCheckItem {

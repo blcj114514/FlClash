@@ -211,6 +211,10 @@ class _DesktopDashboard extends StatelessWidget {
                 sized(controlHeight, row(switches)),
                 sized(
                   middleHeight,
+                  const RepaintBoundary(child: IpInsightCard()),
+                ),
+                sized(
+                  middleHeight,
                   row(const [(1, IntranetIpCard()), (1, ProfilesCard())]),
                 ),
                 sized(
@@ -238,15 +242,21 @@ class _DesktopDashboard extends StatelessWidget {
           sized(
             middleHeight,
             row([
-              (1, const IntranetIpCard()),
-              (1, const ProfilesCard()),
+              (2, const IpInsightCard()),
               (
-                1,
+                2,
                 ServiceStatusCard(
                   columns: column >= _servicePairColumnMin * scale ? 2 : 1,
                 ),
               ),
-              (1, const MemoryInfo()),
+            ]),
+          ),
+          sized(
+            middleHeight,
+            row(const [
+              (1, IntranetIpCard()),
+              (2, ProfilesCard()),
+              (1, MemoryInfo()),
             ]),
           ),
         ];
@@ -254,8 +264,8 @@ class _DesktopDashboard extends StatelessWidget {
             padding.vertical +
             topHeight +
             controlHeight +
-            middleHeight +
-            gap * 3;
+            middleHeight * 2 +
+            gap * 4;
         final tablesFit = constraints.maxHeight >= rowsHeight + tablesHeight;
         final fills = constraints.maxHeight >= rowsHeight + summaryHeight;
         return SingleChildScrollView(

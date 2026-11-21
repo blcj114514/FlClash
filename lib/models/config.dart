@@ -134,6 +134,7 @@ const List<DashboardWidget> defaultDashboardWidgets = [
   DashboardWidget.vpnButton,
   DashboardWidget.networkTakeover,
   DashboardWidget.intranetIp,
+  DashboardWidget.ipInsight,
   DashboardWidget.serviceStatus,
   DashboardWidget.profiles,
   DashboardWidget.proxyGroups,
@@ -146,6 +147,7 @@ final List<DashboardWidget> platformDefaultDashboardWidgets = system.isAndroid
     ? const [
         DashboardWidget.currentOutbound,
         DashboardWidget.networkSpeed,
+        DashboardWidget.ipInsight,
         DashboardWidget.outboundMode,
         DashboardWidget.profiles,
         DashboardWidget.proxyGroups,
